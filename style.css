@@ -1,0 +1,575 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            #123c40,
+            #071014 45%
+        );
+
+    color: #edf8f5;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
+
+/* HEADER */
+
+header {
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    border-bottom: 1px solid #20353a;
+
+    background: rgba(7,16,20,.9);
+}
+
+
+.logo {
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+.logo span {
+    color: #70f0c0;
+
+    font-size: 24px;
+
+    margin-right: 8px;
+}
+
+
+.score {
+    color: #91a8aa;
+
+    font-size: 13px;
+}
+
+
+.score strong {
+    color: #70f0c0;
+
+    font-size: 17px;
+}
+
+
+/* MAIN */
+
+main {
+    width: 90%;
+
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+
+/* HERO */
+
+.hero {
+    padding: 80px 0 45px;
+}
+
+
+.eyebrow {
+    color: #70f0c0;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    font-weight: bold;
+}
+
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 78px);
+
+    line-height: 1;
+
+    margin: 15px 0;
+
+    letter-spacing: -4px;
+}
+
+
+.hero h1 span {
+    color: #70f0c0;
+}
+
+
+.subtitle {
+    color: #9db2b4;
+
+    line-height: 1.7;
+
+    max-width: 700px;
+}
+
+
+/* CARD */
+
+.game-card {
+    background:
+        linear-gradient(
+            145deg,
+            #102126,
+            #0a171b
+        );
+
+    border: 1px solid #294148;
+
+    border-radius: 22px;
+
+    padding: 28px;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.25);
+}
+
+
+.game-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+h2 {
+    font-size: 30px;
+
+    margin: 5px 0 20px;
+}
+
+
+.round {
+    color: #80999d;
+
+    font-size: 11px;
+
+    text-align: right;
+}
+
+
+.round strong {
+    display: block;
+
+    color: #70f0c0;
+
+    font-size: 17px;
+
+    margin-top: 5px;
+}
+
+
+/* INSTRUCTIONS */
+
+.instructions {
+    padding: 15px;
+
+    background: #102c2e;
+
+    border: 1px solid #28504c;
+
+    border-radius: 12px;
+
+    color: #bdd1d0;
+
+    line-height: 1.6;
+
+    margin-bottom: 20px;
+}
+
+
+/* NETWORK */
+
+.network {
+    background: #071216;
+
+    border: 1px solid #253c42;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+}
+
+
+svg {
+    width: 100%;
+
+    height: auto;
+}
+
+
+/* NETWORK NODES */
+
+.node {
+    cursor: pointer;
+}
+
+
+.node circle {
+    fill: #10272d;
+
+    stroke: #527079;
+
+    stroke-width: 2;
+
+    transition: .2s;
+}
+
+
+.node:hover circle {
+    stroke: #70f0c0;
+
+    stroke-width: 4;
+}
+
+
+.node text {
+    fill: white;
+
+    font-weight: bold;
+
+    pointer-events: none;
+}
+
+
+.node .scoreText {
+    fill: #70f0c0;
+
+    font-size: 13px;
+}
+
+
+.link {
+    stroke: #4b727c;
+
+    stroke-width: 2;
+
+    opacity: .8;
+}
+
+
+.arrow {
+    fill: #4b727c;
+}
+
+
+/* RANKING */
+
+.ranking {
+    margin-top: 20px;
+}
+
+
+.ranking h3 {
+    color: #81979b;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+
+.rank {
+    display: grid;
+
+    grid-template-columns: 30px 1fr 80px;
+
+    align-items: center;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid #20343a;
+}
+
+
+.rank-number {
+    color: #657c81;
+
+    font-size: 12px;
+}
+
+
+.rank-name {
+    font-weight: bold;
+}
+
+
+.rank-score {
+    text-align: right;
+
+    color: #70f0c0;
+
+    font-family: monospace;
+}
+
+
+/* BUTTONS */
+
+.controls {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+
+button {
+    border: none;
+
+    border-radius: 10px;
+
+    padding: 14px 20px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+
+.primary {
+    background: #70f0c0;
+
+    color: #062018;
+}
+
+
+.primary:hover {
+    transform: translateY(-2px);
+
+    filter: brightness(1.08);
+}
+
+
+.secondary {
+    background: #182b31;
+
+    color: white;
+
+    border: 1px solid #355058;
+}
+
+
+.secondary:hover {
+    background: #21383f;
+}
+
+
+/* MESSAGE */
+
+.message {
+    margin-top: 18px;
+
+    padding: 15px;
+
+    color: #9fb3b5;
+
+    border-top: 1px solid #243a40;
+
+    line-height: 1.6;
+}
+
+
+/* SURFER */
+
+.surfer-area {
+    text-align: center;
+
+    padding: 30px;
+}
+
+
+.surfer {
+    width: 80px;
+
+    height: 80px;
+
+    margin: 0 auto 25px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: #143438;
+
+    border: 2px solid #70f0c0;
+
+    color: #70f0c0;
+
+    font-size: 30px;
+
+    transition: .3s;
+}
+
+
+.visits {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+
+.visit {
+    padding: 15px;
+
+    background: #0a171b;
+
+    border: 1px solid #263d43;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    color: #9db0b2;
+}
+
+
+.visit strong {
+    display: block;
+
+    color: #70f0c0;
+
+    font-size: 22px;
+
+    margin-top: 5px;
+}
+
+
+/* QUIZ */
+
+.question {
+    padding: 20px 0;
+
+    border-bottom: 1px solid #24383e;
+}
+
+
+.question p {
+    font-weight: bold;
+}
+
+
+.answers {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+
+.answers button {
+    background: #17282e;
+
+    color: white;
+
+    border: 1px solid #334c53;
+}
+
+
+.correct {
+    background: #214d40 !important;
+
+    border-color: #70f0c0 !important;
+}
+
+
+.wrong {
+    background: #4b2929 !important;
+
+    border-color: #ff8d8d !important;
+}
+
+
+/* FOOTER */
+
+footer {
+    width: 90%;
+
+    max-width: 1100px;
+
+    margin: 50px auto 30px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    color: #61767b;
+
+    font-size: 11px;
+}
+
+
+footer strong {
+    color: #70f0c0;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .game-header {
+        display: block;
+    }
+
+    .round {
+        text-align: left;
+
+        margin-bottom: 15px;
+    }
+
+    .controls {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .visits {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    footer {
+        flex-direction: column;
+    }
+}
